@@ -147,7 +147,7 @@ where
         output: ResultAndState<<Self::Evm as Evm>::HaltReason>,
         tx: impl ExecutableTx<Self>,
     ) -> Result<u64, BlockExecutionError> {
-        let ResultAndState { result, state } = output;
+        let ResultAndState { result, state, .. } = output;
         let is_deposit = tx.tx().ty() == DEPOSIT_TRANSACTION_TYPE;
 
         // Fetch the depositor account from the database for the deposit nonce.

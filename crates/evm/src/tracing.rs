@@ -154,7 +154,7 @@ where
         let TxTracer { evm, fused_inspector } = self.inner;
         let (db, inspector, _) = evm.components_mut();
 
-        let Ok(ResultAndState { result, state }) = result else {
+        let Ok(ResultAndState { result, state, .. }) = result else {
             return None;
         };
         let mut was_fused = false;

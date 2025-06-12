@@ -130,7 +130,7 @@ where
         output: ResultAndState<<Self::Evm as Evm>::HaltReason>,
         tx: impl ExecutableTx<Self>,
     ) -> Result<u64, BlockExecutionError> {
-        let ResultAndState { result, state } = output;
+        let ResultAndState { result, state, .. } = output;
 
         self.system_caller.on_state(StateChangeSource::Transaction(self.receipts.len()), &state);
 
