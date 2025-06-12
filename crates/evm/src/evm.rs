@@ -91,7 +91,7 @@ pub trait Evm {
     where
         Self::DB: DatabaseCommit,
     {
-        let ResultAndState { result, state } = self.transact(tx)?;
+        let ResultAndState { result, state, .. } = self.transact(tx)?;
         self.db_mut().commit(state);
 
         Ok(result)

@@ -127,7 +127,7 @@ where
         let result = self.inner.evm.transact(tx.clone());
 
         let inspector = self.inner.fuse_inspector();
-        let Ok(ResultAndState { result, state }) = result else {
+        let Ok(ResultAndState { result, state, .. }) = result else {
             return None;
         };
         let output = (self.hook)(TracingCtx {
