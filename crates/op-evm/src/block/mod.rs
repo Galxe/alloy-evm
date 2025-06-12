@@ -159,7 +159,7 @@ where
         let hash = tx.tx().trie_hash();
 
         // Execute transaction.
-        let ResultAndState { result, state } =
+        let ResultAndState { result, state, .. } =
             self.evm.transact(tx).map_err(move |err| BlockExecutionError::evm(err, hash))?;
 
         if !f(&result).should_commit() {
