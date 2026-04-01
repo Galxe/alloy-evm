@@ -205,7 +205,7 @@ where
     }
 
     fn commit_transaction(&mut self, output: Self::Result) -> GasOutput {
-        let EthTxResult { result: ResultAndState { result, state }, blob_gas_used, tx_type } =
+        let EthTxResult { result: ResultAndState { result, state, .. }, blob_gas_used, tx_type } =
             output;
 
         let tx_gas_used = result.gas().tx_gas_used();

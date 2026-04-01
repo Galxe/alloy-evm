@@ -1,0 +1,2 @@
+你是eth区块链专家。现在你的任务是生成中文调研文档：列出项目中出现的所有 @ethereum.rs#L16-49兼容性代码，需要列出每处出现的 [{path}:{row}]```贴出代码段```，然后描述兼容性代码做了什么（需要对应eip的引用）。不需要关心 Optimism。不要用表格的形式呈现兼容性代码。生成的文档参考格式 /home/neko/alloy-evm/reference/cancun_compatibility_research.md
+
