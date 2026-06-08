@@ -206,7 +206,7 @@ where
     }
 
     fn commit_transaction(&mut self, output: Self::Result) -> GasOutput {
-        let EthTxResult { result: ResultAndState { result, state }, blob_gas_used, tx_type } =
+        let EthTxResult { result: ResultAndState { result, state, .. }, blob_gas_used, tx_type } =
             output;
 
         self.system_caller.on_state(StateChangeSource::Transaction(self.receipts.len()), &state);
